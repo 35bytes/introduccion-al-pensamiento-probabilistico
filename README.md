@@ -32,17 +32,17 @@ No tiene por qué haber una relación causal o temporal entre _A_ y _B_. _A_ pue
 
 La notación para escribir,
 
-_«la probabilidad de A y B suceden»_: `P(A and B) = P(A)P(B|A)`
+_«la probabilidad de A y B suceden»_: <img src="readme_img/paandb.svg" height="15">
 
-_«la probabilidad de B»_: `P(B) = P(A)P(B|A) + P(~A)P(B|~A)`
+_«la probabilidad de B»_: <img src="readme_img/pb.svg" height="15">
 
 Un ejemplo de esto puede ser la probabilidad que una persona **tenga cáncer**, luego de realizar pruebas.
 
-`P(cancer) = P(positivo)P(cancer|positivo) + P(negativo)P(cancer|negativo)`
+<img src="readme_img/pcancer.svg" height="15">
 
 Otro ejemplo es cual es la probabilidad de que una persona **use drogas**, pero como dato adicional esta persona es músico.
 
-`P(drogas) = P(músico)P(drogas|músico) + P(~músico)P(drogas|~músico)`
+<img src="readme_img/pdrogas.svg" height="15">
 
 ## Teorema de Bayes
 
@@ -64,5 +64,12 @@ donde:
 - <img src="readme_img/pba.svg" height="15"> es la probabilidad de <img src="readme_img/B.svg" height="12"> en la hipótesis <img src="readme_img/Ai.svg" height="15">,
 - <img src="readme_img/pab.svg" height="15"> son las probabilidades a posteriori.
 
+Como sabemos que <img src="readme_img/pb.svg" height="15"> podemos reemplazarlo en la ecuación y nos quedaría:
+
+<br>
+<div align="center">
+    <img src="readme_img/bayes-expandido.svg" height="60">
+</div>
+<br>
 
 En este [enlace](https://www.youtube.com/watch?v=HZGCoVF3YvM&t) _(en inglés)_ podras encontrar un video práctico sobre el **Teorema de Bayes.**
