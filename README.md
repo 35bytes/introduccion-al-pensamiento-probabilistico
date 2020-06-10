@@ -73,3 +73,45 @@ Como sabemos que <img src="readme_img/pb.svg" height="15"> podemos reemplazarlo 
 <br>
 
 En este [enlace](https://www.youtube.com/watch?v=HZGCoVF3YvM&t) _(en inglés)_ podras encontrar un video práctico sobre el **Teorema de Bayes.**
+
+
+## Ejercicio de Bayes en código
+
+En el siguiente ejercicio implementaremos la posibilidad de tener **síntomas** dado a que una persona tenga **cáncer.**
+
+<div align="center"> 
+  <img src="readme_img/cuadro-cancer.png" width="50%">
+</div>
+
+```py
+
+# Implementamos la P(B) = P(A)P(A|B) + P(¬A)P(B|¬A)
+def prob_b(prob_a, prob_b_dado_a, prob_b_complemento_a):
+    calculo = prob_a * prob_b_dado_a + (1-prob_a) * prob_b_complemento_a
+    return calculo
+
+# Implementamos la P(A|B) = P(B|A)P(A) / P(B)
+def cal_bayes(prob_a, prob_b_dado_a, prob_b_complemento_a):
+    prob_evento = prob_b(prob_a, prob_b_dado_a, prob_b_complemento_a)
+    calculo = (prob_b_dado_a * prob_a)/prob_evento
+
+    return calculo
+
+if __name__ == "__main__":
+    prob_cancer = 1 / 100000
+    prob_sintoma_dado_cancer = 1
+    prob_sintoma_dado_no_cancer = 10 / 99999
+    
+    resultado = cal_bayes(prob_cancer, prob_sintoma_dado_cancer, prob_sintoma_dado_no_cancer)
+
+    print(resultado)
+```
+
+Vamos a la consola y ejecutamos nuestro programa.
+
+```bash
+python3 sintomas.py # Ejecutamos nuestro programa
+
+# Y este sera nuestro resultado.
+0.09090909090909091
+```
