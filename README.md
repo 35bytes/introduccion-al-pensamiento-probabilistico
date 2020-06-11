@@ -28,6 +28,11 @@ El contenido de este documento esta basado en el curso del mismo nombre dictado 
 - [Introducción a Machine Learning](#Introducción-a-Machine-Learning)
     - [Feature vectors](#Feature-vectors)
     - [Métricas de distancia](#Métricas-de-distancia)
+- [Agrupamiento](#Agrupamiento)
+    - [Introducción al agrupamiento](#Introducción-al-agrupamiento)
+    - [Agrupamiento jerárquico](#Agrupamiento-jerárquico)
+    - [Agrupamiento K-means](#Agrupamiento-K-means)
+    - [Otras técnicas de agrupamiento](#Otras-técnicas-de-agrupamiento)
 
 # Programación probabilística
 
@@ -246,3 +251,55 @@ Distancia euclidiana:
 Distancia de Manhattan:
 
 <img src="readme_img/manhattan.svg" height="25">
+
+# Agrupamiento
+
+## Introducción al agrupamiento
+
+Es un proceso mediante el cual se agrupan objetos similares en clusters que los identifican. Se clasifican como aprendizaje no supervisado, ya que no requiere la utilización de etiquetas.
+
+Permite entender la estructura de los datos y la similitud entre los mismos.
+
+Es utilizado en motores de recomendación, análisis de redes sociales, análisis de riesgo crediticio, clasificación de genes, riesgos médicos, etc.
+
+## Agrupamiento jerárquico
+
+Es un algoritmo que agrupa objetos similares en grupos llamados _clustes_. El algoritmo comienza tratando a cada objeto como un cluster individual y luego realiza los siguientes pasos de manera recursiva:
+- Identifica los 2 clusters con menor distancia (lo más similares).
+- Agrupa los 2 clusters en 1 nuevo.
+
+El _output_ final es un dendrograma que muestra la relación entre objetos y grupos.
+
+Es importante determinar qué medida de distancia vamos a utilizar y los puntos a utilizar en cada cluster (linkage criteria).
+
+## Agrupamiento K means
+
+Es un algoritmo que agrupa utilizando centroides. El algoritmo funciona asignando puntos al azar (K define el número inicial de clusters) y después:
+- En cada iteración el punto se ajusta a su nuevo centroide y cada punto se recalcula con la distancia con respecto de los centroides.
+- Los puntos se reasignan al nuevo centro.
+- El algoritmo se repite de manera iterativa hasta que ya no existen mejoras.
+
+## Otras técnicas de agrupamiento
+
+El agrupamiento es una técnica de Machine Learning que consiste, en pocas palabras, en dividir una población en grupos con la consecuencia de que los datos en un grupo son más similares entre ellos que entre los otros grupos.
+
+Imagina que eres el dueño de una startup que hace ecommerce y quieres tener estrategias de venta para tus clientes. Es casi imposible diseñar una estrategia por cada individuo, pero se puede utilizar el agrupamiento para dividir a los clientes en grupos que tengan similitudes relevantes y así reducir el problema a unas cuantas estrategias.
+
+Existen dos tipos de agrupamiento:
+- **Agrupamiento estricto (hard clustering):** en el cual cada dato pertenece a un grupo u otro. No hay puntos medios.
+
+- **Agrupamiento laxo (soft clustering):** en el cual en lugar de asignar un dato a un grupo, se asigna probabilidades a cada dato de pertenecer o no a un grupo.
+
+Un punto muy importante que debes considerar cuando ejecutas técnicas de agrupamiento es que debes definir muy claro a qué te refieres cuando hablas de similitud entre puntos, porque esto puede ayudarte a definir el algoritmo correcto para tus necesidades particulares.
+
+A grandes rasgos existen cuatro aproximaciones para definir similitud:
+
+- **Modelos conectivos:** Estos modelos asumen que los puntos más similares son los que se encuentran más cercanos en el espacio de búsqueda. Recuerda que este espacio puede ser altamente dimensional cuando tus _feature vectors_ definen muchas características a analizar. Una desventaja de este tipo de modelos es que no escalan para conjuntos de datos grandes (aunque es posible utilizar una muestra y aplicar técnicas de estadística inferencial para obtener resultados).
+
+- **Modelos de centroide:** Este tipo de modelos definen similitud en términos de cercanía con el centroide del grupo. Los datos se agrupan al determinar cuál es el centroide más cercano.
+
+- **Modelos de distribución:** Este tipo de modelos trata de asignar probabilidades a cada dato para determinar si pertenecen a una distribución específica o no (por ejemplo, normal, binomial, Poisson, etc.).
+
+- **Modelos de densidad:** Estos modelos analizan la densidad de los datos en diferentes regiones y dividen el conjunto en grupos. Luego asignan los puntos de acuerdo a las áreas de densidad en las que se haya dividido el dataset.
+
+Acuérdate que no tienes que casarte con un modelo específico. Muchos de los mejores Ingenieros de Machine Learning y Científicos de Datos utilizan varios modelos con el mismo conjunto de datos para analizar el rendimiento de los diversos algoritmos que tienen a su disposición. Así que experimenta y siempre compara tus resultados antes de tomar una decisión.
