@@ -25,6 +25,9 @@ El contenido de este documento esta basado en el curso del mismo nombre dictado 
     - [Falacia del francotirador de Texas](#Falacia-del-francotirador-de-Texas)
     - [Porcentajes confusos](#Porcentajes-confusos)
     - [Falacia de regresión](#Falacia-de-regresión)
+- [Introducción a Machine Learning](#Introducción-a-Machine-Learning)
+    - [Feature vectors](#Feature-vectors)
+    - [Métricas de distancia](#Métricas-de-distancia)
 
 # Programación probabilística
 
@@ -95,7 +98,7 @@ En el siguiente ejercicio implementaremos la posibilidad de tener **síntomas** 
 
 ```py
 
-# Implementamos la P(B) = P(A)P(A|B) + P(¬A)P(B|¬A)
+# Implementamos la P(B) = P(A)P(B|A) + P(¬A)P(B|¬A)
 def prob_b(prob_a, prob_b_dado_a, prob_b_complemento_a):
     calculo = prob_a * prob_b_dado_a + (1-prob_a) * prob_b_complemento_a
     return calculo
@@ -201,3 +204,45 @@ Cuando no sabemos la cuenta total del cual se obtiene un porcentaje tenemos el r
 Muchos eventos fluctúan naturalmente, por ejemplo, la temperatura promedio de una ciudad, el rendimiento de un atleta, los rendimientos de un portafolio de inversión, etc.
 
 Cuando algo fluctúa y se aplican medidas correctivas se puede creer que existe un vínculo de causalidad en lugar de una regresión a la media.
+
+# Introducción a Machine Learning
+
+_"Es el campo de estudio que le da a las computadoras la habilidad de aprender sin ser explícitamente programadas."_ - Arthur Samuel, 1959.
+
+- Machine learning se utiliza cuando:
+    - Programar un algoritmo es imposible.
+    - El problema es muy complejo o no se conocen altoritmos para resolverlo.
+    - Ayuda a los humanos a entender patrones (data mining).
+
+- Aprendizaje supervisado vs no supervisado vs semisupervisado.
+
+- Batch vs online learning.
+
+## Feature vectors
+
+Se utilizan para representar características simbólicas o numéricas llamadas _features._ Permiten analizar un objeto desde una perspectiva matemática.
+
+Los algoritmos de machine learning típicamente requieren representaciones numéricas para poder ejecutar el cómputo.
+
+Uno de los _feature vectors_ más conocidos es la representación del color a través de RGB
+- color = [R, G, B]
+- Procesamiento de imágenes: Gradientes, bordes, áreas, colores, etc.
+- Reconocimiento de voz: Distancia de sonidos, nivel de ruido, razón ruido / señal, etc.
+- Spam: Dirección IP, estructura del texto, frecuencia de palabras, encabezados, etc.
+
+## Métricas de distancia
+
+Muchos de los algoritmos de machine learning pueden clasificarse como algoritmos de optimización. Lo que desean optimizar es una función que en muchas ocasiones se refiere a la distancia entre features.
+
+Features:
+
+- <img src="readme_img/xab.svg" height="15"> 
+- <img src="readme_img/ycd.svg" height="15">
+
+Distancia euclidiana:
+
+<img src="readme_img/euclidiana.svg" height="15">
+
+Distancia de Manhattan:
+
+<img src="readme_img/manhattan.svg" height="15">
