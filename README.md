@@ -268,7 +268,7 @@ Es utilizado en motores de recomendación, análisis de redes sociales, análisi
 
 ## Agrupamiento jerárquico
 
-Es un algoritmo que agrupa objetos similares en grupos llamados _clustes_. El algoritmo comienza tratando a cada objeto como un cluster individual y luego realiza los siguientes pasos de manera recursiva:
+Es un algoritmo que agrupa objetos similares en grupos llamados _clusters_. El algoritmo comienza tratando a cada objeto como un cluster individual y luego realiza los siguientes pasos de manera recursiva:
 - Identifica los 2 clusters con menor distancia (lo más similares).
 - Agrupa los 2 clusters en 1 nuevo.
 
