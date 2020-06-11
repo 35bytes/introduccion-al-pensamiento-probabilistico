@@ -236,13 +236,13 @@ Muchos de los algoritmos de machine learning pueden clasificarse como algoritmos
 
 Features:
 
-- <img src="readme_img/xab.svg" height="15"> 
-- <img src="readme_img/ycd.svg" height="15">
+- <img src="readme_img/xab.svg" height="17"> 
+- <img src="readme_img/ycd.svg" height="17">
 
 Distancia euclidiana:
 
-<img src="readme_img/euclidiana.svg" height="15">
+<img src="readme_img/euclidiana.svg" height="25">
 
 Distancia de Manhattan:
 
-<img src="readme_img/manhattan.svg" height="15">
+<img src="readme_img/manhattan.svg" height="25">
